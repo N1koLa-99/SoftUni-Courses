@@ -1,0 +1,32 @@
+static void Main(string[] args)
+        {
+            double bugetFilm = double.Parse(Console.ReadLine());
+            int statisti = int.Parse(Console.ReadLine());
+            double obleklo = double.Parse(Console.ReadLine());
+
+            double decor = bugetFilm *0.10;
+            double extrakt = statisti * obleklo;
+            
+            
+            if (statisti>150)
+            {
+                extrakt = extrakt - extrakt * 0.10;
+
+            }
+            double totalPrice = extrakt + decor;
+
+            
+            
+            if (bugetFilm>=totalPrice)
+            {
+
+                Console.WriteLine("Action!");
+                Console.WriteLine($"Wingard starts filming with {bugetFilm - totalPrice:f2} leva left.");
+            }
+            else
+            {
+                Console.WriteLine("Not enough money!");
+                Console.WriteLine($"Wingard needs {Math.Abs(bugetFilm - totalPrice):f2} leva more.");
+            }
+        }
+    
