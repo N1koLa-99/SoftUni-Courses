@@ -1,0 +1,21 @@
+static void Main()
+    {
+        string seriesName = Console.ReadLine();
+        int episodeLength = int.Parse(Console.ReadLine());
+        int breakLength = int.Parse(Console.ReadLine());
+
+        double lunchTime = breakLength / 8.0;
+        double restTime = breakLength / 4.0;
+        double freeTime = breakLength - lunchTime - restTime;
+
+        if (freeTime >= episodeLength)
+        {
+            Console.WriteLine("You have enough time to watch {0} and left with {1} minutes free time.",
+                seriesName, Math.Ceiling(freeTime - episodeLength));
+        }
+        else
+        {
+            Console.WriteLine("You don't have enough time to watch {0}, you need {1} more minutes.",
+                seriesName, Math.Ceiling(episodeLength - freeTime));
+        }
+    }
