@@ -1,0 +1,36 @@
+static void Main()
+    {
+        double excursionPrice = double.Parse(Console.ReadLine());
+        int puzzlesCount = int.Parse(Console.ReadLine());
+        int dollsCount = int.Parse(Console.ReadLine());
+        int teddyBearsCount = int.Parse(Console.ReadLine());
+        int minionsCount = int.Parse(Console.ReadLine());
+        int trucksCount = int.Parse(Console.ReadLine());
+
+        double puzzlesPrice = 2.60;
+        double dollsPrice = 3;
+        double teddyBearsPrice = 4.10;
+        double minionsPrice = 8.20;
+        double trucksPrice = 2;
+
+        int toysCount = puzzlesCount + dollsCount + teddyBearsCount + minionsCount + trucksCount;
+        double toysPrice = puzzlesCount * puzzlesPrice + dollsCount * dollsPrice + teddyBearsCount * teddyBearsPrice + minionsCount * minionsPrice + trucksCount * trucksPrice;
+
+        if (toysCount >= 50)
+        {
+            toysPrice *= 0.75; // apply discount
+        }
+
+        double rent = 0.1 * toysPrice;
+        double profit = toysPrice - rent;
+        double moneyLeft = profit - excursionPrice;
+
+        if (moneyLeft >= 0)
+        {
+            Console.WriteLine("Yes! {0:f2} lv left.", moneyLeft);
+        }
+        else
+        {
+            Console.WriteLine("Not enough money! {0:f2} lv needed.", Math.Abs(moneyLeft));
+        }
+    }
