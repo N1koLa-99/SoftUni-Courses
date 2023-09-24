@@ -1,0 +1,25 @@
+static void Main(string[] args)
+        {
+            string type = Console.ReadLine();
+            int rowl = int.Parse(Console.ReadLine());
+            int cowl = int.Parse(Console.ReadLine());
+            double mesta = 0;
+            double priceTicket = 0;
+            mesta = rowl * cowl;
+
+            if (type== "Premiere")
+            {
+                priceTicket = mesta * 12.00;
+                Console.WriteLine($"{priceTicket:F2} leva");
+            }
+            else if (type == "Normal")
+            {
+                priceTicket = mesta * 7.50;
+                Console.WriteLine($"{priceTicket:F2} leva");
+            }
+            else if (type == "Discount")
+            {
+                priceTicket = mesta *5.00;
+                Console.WriteLine($"{priceTicket:F2} leva");
+            }
+        }
