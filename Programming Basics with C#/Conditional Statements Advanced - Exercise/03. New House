@@ -1,0 +1,60 @@
+static void Main(string[] args)
+    {
+        string flowerType = Console.ReadLine();
+        int flowersCount = int.Parse(Console.ReadLine());
+        int budget = int.Parse(Console.ReadLine());
+
+        double flowerPrice = 0;
+
+        switch (flowerType)
+        {
+            case "Roses":
+                flowerPrice = 5;
+                if (flowersCount > 80)
+                {
+                    flowerPrice *= 0.9;
+                }
+                break;
+            case "Dahlias":
+                flowerPrice = 3.8;
+                if (flowersCount > 90)
+                {
+                    flowerPrice *= 0.85;
+                }
+                break;
+            case "Tulips":
+                flowerPrice = 2.8;
+                if (flowersCount > 80)
+                {
+                    flowerPrice *= 0.85;
+                }
+                break;
+            case "Narcissus":
+                flowerPrice = 3;
+                if (flowersCount < 120)
+                {
+                    flowerPrice *= 1.15;
+                }
+                break;
+            case "Gladiolus":
+                flowerPrice = 2.5;
+                if (flowersCount < 80)
+                {
+                    flowerPrice *= 1.2;
+                }
+                break;
+        }
+
+        double totalCost = flowersCount * flowerPrice;
+
+        if (budget >= totalCost)
+        {
+            double leftMoney = budget - totalCost;
+            Console.WriteLine("Hey, you have a great garden with {0} {1} and {2:F2} leva left.", flowersCount, flowerType, leftMoney);
+        }
+        else
+        {
+            double neededMoney = totalCost - budget;
+            Console.WriteLine("Not enough money, you need {0:F2} leva more.", neededMoney);
+        }
+    }
