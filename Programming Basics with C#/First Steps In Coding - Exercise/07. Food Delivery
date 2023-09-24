@@ -1,0 +1,15 @@
+static void Main(string[] args)
+        {
+            int chicken = int.Parse(Console.ReadLine());
+            int fish = int.Parse(Console.ReadLine());
+            int vegan = int.Parse(Console.ReadLine());
+
+            double chickenPrice = chicken * 10.35;
+            double fishPrice = fish * 12.40;
+            double veganPrice = vegan * 8.15;
+
+            double sum = chickenPrice + fishPrice + veganPrice;
+            double dessertPrice = sum * 0.20;
+            double totalPrice = sum + dessertPrice + 2.50;
+            Console.WriteLine(totalPrice);
+        }
