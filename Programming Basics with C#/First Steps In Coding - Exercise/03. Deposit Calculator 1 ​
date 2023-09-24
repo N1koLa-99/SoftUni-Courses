@@ -1,0 +1,19 @@
+using System;
+
+namespace First_Steps_In_Coding___Exercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double deposit = double.Parse(Console.ReadLine());
+            int term = int.Parse(Console.ReadLine());
+            double sgp = double.Parse(Console.ReadLine())*0.01;
+            
+            double sum = deposit + term*(deposit*sgp/12);
+     
+            
+            Console.WriteLine(sum);
+        }
+    }
+}
