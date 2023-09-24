@@ -1,0 +1,47 @@
+static void Main()
+    {
+        int n1 = int.Parse(Console.ReadLine());
+        int n2 = int.Parse(Console.ReadLine());
+        char op = char.Parse(Console.ReadLine());
+
+        switch (op)
+        {
+            case '+':
+                int sum = n1 + n2;
+                Console.Write("{0} + {1} = {2} ", n1, n2, sum);
+                Console.WriteLine(sum % 2 == 0 ? "- even" : "- odd");
+                break;
+            case '-':
+                int diff = n1 - n2;
+                Console.Write("{0} - {1} = {2} ", n1, n2, diff);
+                Console.WriteLine(diff % 2 == 0 ? "- even" : "- odd");
+                break;
+            case '*':
+                int product = n1 * n2;
+                Console.Write("{0} * {1} = {2} ", n1, n2, product);
+                Console.WriteLine(product % 2 == 0 ? "- even" : "- odd");
+                break;
+            case '/':
+                if (n2 == 0)
+                {
+                    Console.WriteLine("Cannot divide {0} by zero", n1);
+                }
+                else
+                {
+                    double quotient = (double)n1 / n2;
+                    Console.WriteLine("{0} / {1} = {2:F2}", n1, n2, quotient);
+                }
+                break;
+            case '%':
+                if (n2 == 0)
+                {
+                    Console.WriteLine("Cannot divide {0} by zero", n1);
+                }
+                else
+                {
+                    int remainder = n1 % n2;
+                    Console.WriteLine("{0} % {1} = {2}", n1, n2, remainder);
+                }
+                break;
+        }
+    }
