@@ -1,0 +1,29 @@
+
+
+namespace First_Steps_In_Coding___Exercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int pens= int.Parse(Console.ReadLine());
+            int markers = int.Parse(Console.ReadLine());
+            int chemicals = int.Parse(Console.ReadLine());
+            int discount= int.Parse(Console.ReadLine());
+
+           double pricePen=pens*5.80;
+           double priceMarkers=markers*7.20;
+           double priceChemicals=chemicals*1.20;
+            double dis =discount * 0.01;
+            
+          
+            
+            double sum = priceChemicals + priceMarkers + pricePen;
+            double sum2 = sum - (sum * dis);
+            Console.WriteLine(sum2);
+            
+          
+        }
+    }
+}
