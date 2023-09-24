@@ -1,0 +1,35 @@
+static void Main(string[] args)
+        {
+
+            double hour = double.Parse(Console.ReadLine());
+            string daysOfWeek = Console.ReadLine();
+           
+            if (daysOfWeek=="Monday" && hour>=10&&hour<=18)
+            {
+                Console.WriteLine("open");
+            }
+            else if(daysOfWeek == "Tuesday" && hour >= 10 && hour <= 18)
+            {
+                Console.WriteLine("open");
+            }
+            else if (daysOfWeek == "Wednesday" && hour >= 10 && hour <= 18)
+            {
+                Console.WriteLine("open");
+            }
+            else if (daysOfWeek == "Thursday" && hour >= 10 && hour <= 18)
+            {
+                Console.WriteLine("open");
+            }
+            else if (daysOfWeek == "Friday" && hour >= 10 && hour <= 18)
+            {
+                Console.WriteLine("open");
+            }
+            else if( daysOfWeek == "Saturday" && hour >= 10 && hour <= 18)
+            {
+                Console.WriteLine("open");
+            }
+            else
+            {
+                Console.WriteLine("closed");
+            }
+        }
