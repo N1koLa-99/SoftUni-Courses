@@ -1,0 +1,30 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int n = int.Parse(Console.ReadLine());
+        int leftSum = 0;
+        for (int i = 0; i <n; i++)
+        {
+            int newNum = int.Parse(Console.ReadLine());
+            leftSum = leftSum +newNum;
+        }
+        int righttSum = 0;
+        for (int i = 0; i < n; i++)
+        {
+            int newNum = int.Parse(Console.ReadLine());
+            righttSum = righttSum + newNum;
+        }
+        if (leftSum==righttSum)
+        {
+            Console.WriteLine("Yes, sum = "+leftSum);
+        }
+        else
+        {
+            int diff = Math.Abs(leftSum - righttSum);
+            Console.WriteLine("No, diff = "+diff);
+        }
+    }
+}
