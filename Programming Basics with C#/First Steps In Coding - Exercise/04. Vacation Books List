@@ -1,0 +1,21 @@
+using System;
+
+namespace First_Steps_In_Coding___Exercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int sumPages = int.Parse(Console.ReadLine());
+            int pagesForHour = int.Parse(Console.ReadLine());
+            int days = int.Parse(Console.ReadLine());
+
+            int sum = sumPages / pagesForHour;
+            int sum2 = sum / days;
+            Console.WriteLine(sum2);
+ 
+          
+        }
+    }
+}
