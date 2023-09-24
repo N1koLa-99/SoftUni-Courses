@@ -1,0 +1,12 @@
+static void Main(string[] args)
+        {
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+            int h = int.Parse(Console.ReadLine());
+            double pr = double.Parse(Console.ReadLine());
+            double pr1 = pr * 0.01;
+            int sum = a * b * h;
+            double obem= sum / 1000.0; 
+            double allSum = obem * (1 - pr1);
+            Console.WriteLine(allSum); 
+        }
