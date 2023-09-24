@@ -1,0 +1,23 @@
+static void Main(string[] args)
+        {
+            int nailon = int.Parse(Console.ReadLine());
+            int kolBoq = int.Parse(Console.ReadLine());
+            int kolRaz= int.Parse(Console.ReadLine());
+            int hour= int.Parse(Console.ReadLine());
+           
+            double priceNailon = (nailon+2) * 1.50;
+          
+            double priceBoq = (kolBoq+1.1)*14.50;
+           
+            double priceRaz = kolRaz * 5.00;
+          
+            
+
+            double sum = priceBoq + priceNailon + priceRaz + 0.40;
+          
+            double sum2 = (sum * 0.30) * hour;
+            
+            double allSum = sum + sum2;
+            Console.WriteLine(allSum);
+        
+        }
