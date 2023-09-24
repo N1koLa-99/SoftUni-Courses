@@ -1,0 +1,48 @@
+static void Main()
+    {
+        int examHour = int.Parse(Console.ReadLine());
+        int examMinute = int.Parse(Console.ReadLine());
+        int arrivalHour = int.Parse(Console.ReadLine());
+        int arrivalMinute = int.Parse(Console.ReadLine());
+
+        int examTime = examHour * 60 + examMinute;
+        int arrivalTime = arrivalHour * 60 + arrivalMinute;
+        int timeDiff = arrivalTime - examTime;
+
+        if (timeDiff > 0)
+        {
+            Console.WriteLine("Late");
+            if (timeDiff < 60)
+            {
+                Console.WriteLine("{0} minutes after the start", timeDiff);
+            }
+            else
+            {
+                int hours = timeDiff / 60;
+                int minutes = timeDiff % 60;
+                Console.WriteLine("{0}:{1:D2} hours after the start", hours, minutes);
+            }
+        }
+        else if (timeDiff >= -30)
+        {
+            Console.WriteLine("On time");
+            if (timeDiff != 0)
+            {
+                Console.WriteLine("{0} minutes before the start", -timeDiff);
+            }
+        }
+        else
+        {
+            Console.WriteLine("Early");
+            if (timeDiff > -60)
+            {
+                Console.WriteLine("{0} minutes before the start", -timeDiff);
+            }
+            else
+            {
+                int hours = (-timeDiff) / 60;
+                int minutes = (-timeDiff) % 60;
+                Console.WriteLine("{0}:{1:D2} hours before the start", hours, minutes);
+            }
+        }
+    }
