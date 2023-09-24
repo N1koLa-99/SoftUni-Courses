@@ -1,0 +1,53 @@
+static void Main(string[] args)
+        {
+            string product = Console.ReadLine();
+            string town = Console.ReadLine();
+            double Quantity = double.Parse(Console.ReadLine());
+           
+            if (product=="coffee")
+            {
+                if (town == "Sofia")
+                    Console.WriteLine(Quantity * 0.50);
+                else if (town == "Varna")
+                    Console.WriteLine(Quantity * 0.45);
+                else if (town == "Plovdiv")
+                    Console.WriteLine(Quantity * 0.40);
+            }
+           
+            else if (product == "water")
+            {
+                if (town == "Sofia")
+                    Console.WriteLine(Quantity * 0.80);
+                else if (town == "Varna")
+                    Console.WriteLine(Quantity * 0.70);
+                else if (town == "Plovdiv")
+                    Console.WriteLine(Quantity * 0.70);
+            }
+            else if (product == "beer")
+            {
+                if (town == "Sofia")
+                    Console.WriteLine(Quantity * 1.20);
+                else if (town == "Varna")
+                    Console.WriteLine(Quantity * 1.10);
+                else if (town == "Plovdiv")
+                    Console.WriteLine(Quantity * 1.15);
+            }
+            else if (product == "sweets")
+            {
+                if (town == "Sofia")
+                    Console.WriteLine(Quantity * 1.45);
+                else if (town == "Varna")
+                    Console.WriteLine(Quantity * 1.35);
+                else if (town == "Plovdiv")
+                    Console.WriteLine(Quantity * 1.30);
+            }
+            else if (product == "peanuts")
+            {
+                if (town == "Sofia")
+                    Console.WriteLine(Quantity * 1.60);
+                else if (town == "Varna")
+                    Console.WriteLine(Quantity * 1.55);
+                else if (town == "Plovdiv")
+                    Console.WriteLine(Quantity * 1.50);
+            }
+        }
