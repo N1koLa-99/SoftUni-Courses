@@ -1,0 +1,12 @@
+static void Main(string[] args)
+        {
+            int texPerYear = int.Parse(Console.ReadLine());
+            double shoes=texPerYear-texPerYear*0.4;
+            double outfit = shoes - shoes * 0.2;
+            double ball = outfit / 4;
+            double acc = ball / 5;
+            double sum = texPerYear + shoes + outfit + ball + acc;
+            Console.WriteLine(sum);
+
+
+        }
