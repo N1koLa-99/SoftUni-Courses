@@ -1,0 +1,51 @@
+static void Main()
+    {
+        int budget = int.Parse(Console.ReadLine());
+        string season = Console.ReadLine();
+        int numFishermen = int.Parse(Console.ReadLine());
+
+        double price = 0;
+
+        switch (season)
+        {
+            case "Spring":
+                price = 3000;
+                break;
+            case "Summer":
+            case "Autumn":
+                price = 4200;
+                break;
+            case "Winter":
+                price = 2600;
+                break;
+        }
+
+        if (numFishermen <= 6)
+        {
+            price *= 0.9;
+        }
+        else if (numFishermen <= 11)
+        {
+            price *= 0.85;
+        }
+        else
+        {
+            price *= 0.75;
+        }
+
+        if (numFishermen % 2 == 0 && season != "Autumn")
+        {
+            price *= 0.95;
+        }
+
+        double remainingMoney = budget - price;
+
+        if (remainingMoney >= 0)
+        {
+            Console.WriteLine("Yes! You have {0:F2} leva left.", remainingMoney);
+        }
+        else
+        {
+            Console.WriteLine("Not enough money! You need {0:F2} leva.", Math.Abs(remainingMoney));
+        }
+    }
