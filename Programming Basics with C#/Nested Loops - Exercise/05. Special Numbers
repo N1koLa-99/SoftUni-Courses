@@ -1,0 +1,27 @@
+using System;
+
+namespace NstedLoops
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            for (int i = 1111; i <= 9999; i++)
+            {//отделяме цифрите на числото
+                int hiljadni = i / 1000;
+                int stotici = (i / 100) % 10;
+                int desetici = (i / 10) % 10;
+                int edinici = i % 10;
+                bool chek1 = (hiljadni != 0) && (n % hiljadni == 0);
+                bool chek2 = stotici != 0 && n % stotici == 0;
+                bool chek3 = desetici != 0 && n % desetici == 0;
+                bool chek4 = edinici != 0 && n % edinici == 0;
+                if (chek1 && chek2 && chek3 && chek4)
+                {
+                    Console.Write(i + " ");
+                }
+            }
+        }
+    }
+}
