@@ -1,0 +1,37 @@
+using System;
+
+namespace NstedLoops
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int counter = 0; double sum1 = 0;
+            int countOfJuri = int.Parse(Console.ReadLine());
+            string presentationName = Console.ReadLine();
+            while (presentationName != "Finish")
+            {
+                counter++;
+                double sum = 0;
+                for (int i = 1; i <= countOfJuri; i++)
+                {
+                    double ocenki = double.Parse(Console.ReadLine());
+                    sum = sum + ocenki;
+                }
+                double avg = sum / countOfJuri;
+                Console.WriteLine($"{presentationName} - {avg:f2}.");
+
+                presentationName = Console.ReadLine();
+                sum1 += sum;
+                if (presentationName == "Finish")
+                {
+                    double avg1 = sum1 / (counter * countOfJuri);
+                    Console.WriteLine($"Student's final assessment is {avg1:f2}.");
+                    break;
+                }
+
+            }
+
+        }
+    }
+}
