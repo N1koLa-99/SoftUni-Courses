@@ -1,0 +1,41 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int tournaments = int.Parse(Console.ReadLine());
+        int startingPoints = int.Parse(Console.ReadLine());
+
+        int totalPoints = startingPoints;
+        int wins = 0;
+        double averagePoints = 0.0;
+
+        for (int i = 0; i < tournaments; i++)
+        {
+            string stage = Console.ReadLine();
+
+            switch (stage)
+            {
+                case "W":
+                    totalPoints += 2000;
+                    wins++;
+                    break;
+                case "F":
+                    totalPoints += 1200;
+                    break;
+                case "SF":
+                    totalPoints += 720;
+                    break;
+            }
+            
+        }
+
+        averagePoints = ((double)totalPoints- startingPoints) / tournaments;
+        double winPercentage = (double)wins / tournaments * 100;
+
+        Console.WriteLine($"Final points: {totalPoints}");
+        Console.WriteLine($"Average points: {Math.Floor(averagePoints)}");
+        Console.WriteLine($"{winPercentage:f2}%");
+    }
+}
