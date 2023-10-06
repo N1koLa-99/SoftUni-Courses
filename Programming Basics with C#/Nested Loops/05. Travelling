@@ -1,0 +1,22 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+
+        string destination = Console.ReadLine();
+        while (destination != "End")
+        {
+            double sum = 0;
+            double budjet = double.Parse(Console.ReadLine());
+            while (budjet > sum)
+            {
+                sum = sum + double.Parse(Console.ReadLine());
+            }
+            Console.WriteLine($"Going to {destination}!");
+            destination = Console.ReadLine();
+
+        }
+    }
+}
