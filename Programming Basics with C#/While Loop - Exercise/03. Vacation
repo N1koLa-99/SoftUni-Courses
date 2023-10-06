@@ -1,0 +1,64 @@
+using System;
+
+namespace _03._Vacation
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        
+            double needeMoney = double.Parse(Console.ReadLine());
+            double avaliableMoney = double.Parse(Console.ReadLine());
+            string input; 
+            double money;
+            int daysCount = 0;
+            int spendCount = 0;
+
+           
+            while (avaliableMoney < needeMoney)
+            {
+                
+                input = Console.ReadLine();
+               
+                money = double.Parse(Console.ReadLine());
+
+                
+                daysCount++;
+
+                if (input == "save")
+                {
+                    
+                    avaliableMoney += money;
+                   
+                    spendCount = 0;
+                }
+                else 
+                {
+                   
+                    spendCount++;
+                    if (spendCount == 5)
+                    {
+                        Console.WriteLine("You can't save the money.");
+                        Console.WriteLine(daysCount);
+                        break;
+                    }
+
+                
+                    avaliableMoney -= money;
+               
+                    if (avaliableMoney < 0)
+                    {
+                        avaliableMoney = 0;
+                    }
+                }
+            }
+
+           
+            if (avaliableMoney >= needeMoney)
+            {
+                Console.WriteLine($"You saved the money for {daysCount} days.");
+            }
+
+        }
+    }
+}
