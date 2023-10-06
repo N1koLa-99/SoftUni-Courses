@@ -1,0 +1,49 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int totalGroups = int.Parse(Console.ReadLine());
+        int[] climbersPerGroup = new int[totalGroups];
+
+        for (int i = 0; i < totalGroups; i++)
+        {
+            climbersPerGroup[i] = int.Parse(Console.ReadLine());
+        }
+
+        double musalaPercentage = CalculatePercentage(climbersPerGroup, 1, 5);
+        double monblanPercentage = CalculatePercentage(climbersPerGroup, 6, 12);
+        double kilimanjaroPercentage = CalculatePercentage(climbersPerGroup, 13, 25);
+        double k2Percentage = CalculatePercentage(climbersPerGroup, 26, 40);
+        double everestPercentage = CalculatePercentage(climbersPerGroup, 41, int.MaxValue);
+
+        Console.WriteLine($"{musalaPercentage:f2}%");
+        Console.WriteLine($"{monblanPercentage:f2}%");
+        Console.WriteLine($"{kilimanjaroPercentage:f2}%");
+        Console.WriteLine($"{k2Percentage:f2}%");
+        Console.WriteLine($"{everestPercentage:f2}%");
+    }
+
+    static double CalculatePercentage(int[] climbersPerGroup, int lowerBound, int upperBound)
+    {
+        int totalClimbers = 0;
+        int climbersInRange = 0;
+
+        foreach (int climbers in climbersPerGroup)
+        {
+            totalClimbers += climbers;
+            if (climbers >= lowerBound && climbers <= upperBound)
+            {
+                climbersInRange += climbers;
+            }
+        }
+
+        if (totalClimbers == 0)
+        {
+            return 0;
+        }
+
+        return (double)climbersInRange / totalClimbers * 100;
+    }
+}
