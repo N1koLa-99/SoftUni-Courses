@@ -1,0 +1,57 @@
+using System;
+
+namespace NstedLoops
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //команда = число или stop
+            string command = Console.ReadLine();
+            //спираме: command == "stop"
+            //продължаваме: command != "stop"
+
+            int sumPrime = 0; //сума на простите числа
+            int sumNonPrime = 0; //сума на не простите числа
+            while (command != "stop")
+            {
+                //число под формата на текст -> "3"
+                int number = int.Parse(command);
+                //проверка дали е отрицателно
+                if (number < 0)
+                {
+                    Console.WriteLine("Number is negative.");
+                }
+                else
+                {
+                    int count = 0; //брой на делители
+
+                    for (int i = 1; i <= number; i++) //всички числа от 1 до моето
+                    {
+                        if (number % i == 0)
+                        {
+                            count++;
+                        }
+                    }
+
+                    //проверка дали е просто или не е просто
+                    if (count == 2)
+                    {
+                        //просто
+                        sumPrime += number;
+                    }
+                    else
+                    {
+                        //не е просто (съставно)
+                        sumNonPrime += number;
+                    }
+                }
+                command = Console.ReadLine();
+            }
+
+            Console.WriteLine($"Sum of all prime numbers is: {sumPrime}");
+            Console.WriteLine($"Sum of all non prime numbers is: {sumNonPrime}");
+
+        }
+    }
+}
