@@ -1,0 +1,46 @@
+using System;
+ 
+namespace _6._Cake
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //1. Четем от козолата ширина и дължина на тортата 
+            int w = int.Parse(Console.ReadLine());
+            int h = int.Parse(Console.ReadLine());
+ 
+            //2. Намираме размерите (броя парчета) на тортата
+            int cakeSize = w * h;
+ 
+            string input = Console.ReadLine();
+ 
+            //3. Създаваме цикъл, който да се изпълнява докато не получим "STOP"
+            while (input!="STOP")
+            {
+                //=> изваждаме парчетата от останалата торта
+                cakeSize -= int.Parse(input);
+ 
+                //=> проверяваме дали парчетата са <0 (!!)
+                if (cakeSize<0)
+                {
+                    break;
+                }
+ 
+                input = Console.ReadLine();
+            }
+ 
+ 
+            //4. Проверяваме дали парчетата са >=0
+            if (cakeSize>=0)
+            {
+                Console.WriteLine($"{cakeSize} pieces are left.");
+            }
+            else
+            {
+                Console.WriteLine($"No more cake left! You need {Math.Abs(cakeSize)} pieces more.");
+            }
+            
+        }
+    }
+}
