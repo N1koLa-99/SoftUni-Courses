@@ -1,0 +1,16 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        while (true)
+        {
+            string text = Console.ReadLine();
+            if (text.ToLower() == "stop")
+                break;
+            
+            Console.WriteLine(text);
+        }
+    }
+}
