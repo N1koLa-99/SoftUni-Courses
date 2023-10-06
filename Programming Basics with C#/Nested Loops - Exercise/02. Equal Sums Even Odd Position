@@ -1,0 +1,36 @@
+using System;
+
+namespace NstedLoops
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int firstNumber = int.Parse(Console.ReadLine());
+            int secondNumber = int.Parse(Console.ReadLine());
+
+            //всички числа, които се намират между двете -> [firstNumber; secondNumber]
+            for (int number = firstNumber; number <= secondNumber; number++)
+            {
+                //проверка дали ще печатаме числото
+                //сума на цифри на позиция 1 3 5 = сума на цифри на позиция 2 4 6
+                //345897
+                //сто + хилядни + десетици = десетох + стот + единици
+                int stThousands = number / 100000; //стохилядни (цифра 1)
+                int tenThousands = number / 10000 % 10;//десетохилядни (цифра 2)
+                int thousands = number / 1000 % 10; //хилядни (цифра 3)
+                int hundreds = number / 100 % 10; //стотици (цифра 4)
+                int tens = number / 10 % 10;// десетици (цифра 5)
+                int units = number % 10; //единиици (цифра 6)
+                int sumEven = tenThousands + hundreds + units;
+                int sumOdd = stThousands + thousands + tens;
+
+                if (sumEven == sumOdd)
+                {
+                    Console.Write(number + " ");
+                }
+
+            }
+        }
+    }
+}
