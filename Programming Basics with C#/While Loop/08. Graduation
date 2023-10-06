@@ -1,0 +1,43 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string studentName = Console.ReadLine();
+        int gradeCounter = 1;
+        double totalGrade = 0;
+        int exclusionGrade = 2;
+        bool isExcluded = false;
+
+        while (gradeCounter <= 12)
+        {
+            double grade = double.Parse(Console.ReadLine());
+
+            if (grade < 4)
+            {
+                exclusionGrade--;
+                if (exclusionGrade == 0)
+                {
+                    isExcluded = true;
+                    break;
+                }
+            }
+
+            totalGrade += grade;
+            gradeCounter++;
+        }
+
+        if (isExcluded)
+        {
+            Console.WriteLine("{0} has been excluded at {1} grade", studentName, gradeCounter - 1);
+        }
+        else
+        {
+            double averageGrade = totalGrade / 12;
+            Console.WriteLine("{0} graduated. Average grade: {1:F2}", studentName, averageGrade);
+        }
+
+        Console.ReadLine();
+    }
+}
