@@ -1,0 +1,40 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int age = int.Parse(Console.ReadLine());
+        double washingMachinePrice = double.Parse(Console.ReadLine());
+        double toyPrice = double.Parse(Console.ReadLine());
+
+        double savedMoney = 0;
+        double moneyGift = 10;
+        int toysCount = 0;
+
+        for (int i = 2; i <= age; i += 2)
+        {
+            savedMoney += moneyGift - 1;
+            moneyGift += 10;
+        }
+
+        for (int i = 1; i <= age; i += 2)
+        {
+            toysCount++;
+        }
+
+        double toysMoney = toysCount * toyPrice;
+        savedMoney += toysMoney;
+
+        if (savedMoney >= washingMachinePrice)
+        {
+            double remainingMoney = savedMoney - washingMachinePrice;
+            Console.WriteLine($"Yes! {remainingMoney:F2}");
+        }
+        else
+        {
+            double neededMoney = washingMachinePrice - savedMoney;
+            Console.WriteLine($"No! {neededMoney:F2}");
+        }
+    }
+}
