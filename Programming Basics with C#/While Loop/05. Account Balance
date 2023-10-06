@@ -1,0 +1,32 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        decimal total = 0;
+
+        while (true)
+        {
+            string input = Console.ReadLine();
+
+            if (input == "NoMoreMoney")
+                break;
+
+            decimal amount;
+            bool isValidAmount = decimal.TryParse(input, out amount);
+
+            if (!isValidAmount || amount < 0)
+            {
+                Console.WriteLine("Invalid operation!");
+                Console.WriteLine("Total: {0:F2}", total);
+                return;
+            }
+
+            Console.WriteLine("Increase: {0:F2}", amount);
+            total += amount;
+           
+        }
+        Console.WriteLine("Total: {0:F2}", total);
+    }
+}
